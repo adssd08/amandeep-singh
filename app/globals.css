@@ -1,0 +1,42 @@
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+@source "../data";
+
+@theme inline {
+  --color-page: #f3f5f9;
+  --color-ink: #0b1220;
+  --color-muted: #51607a;
+  --color-body: #3b4a66;
+  --color-line: #dde3ee;
+  --color-navy: #0b1b3f;
+  --color-accent: #1f5bff;
+  --font-sans: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+body {
+  @apply bg-page font-sans text-ink antialiased;
+}
+
+.blueprint {
+  background-color: #fff;
+  background-image: linear-gradient(#e8edf6 1px, transparent 1px), linear-gradient(90deg, #e8edf6 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes pulse-dot {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot {
+    animation: none;
+  }
+}
